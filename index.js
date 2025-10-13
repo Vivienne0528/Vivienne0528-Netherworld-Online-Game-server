@@ -14,10 +14,11 @@ const server = http.createServer(app);
 // 创建 socket.io 服务器
 const io = new Server(server, {
   cors: {
-    origin:
-      [process.env.CLIENT_URL,
+    origin: [
+      process.env.CLIENT_URL,
       "http://localhost:5174",
-      "http://localhost:5173"],// 允许你的 Vite 前端访问
+      "http://localhost:5173",
+    ], // 允许你的 Vite 前端访问
     methods: ["GET", "POST"],
   },
 });
