@@ -6,8 +6,18 @@ const cors = require("cors");
 
 // 初始化 express
 const app = express();
-app.use(cors());
-
+// app.use(cors());
+app.use(
+  cors({
+    origin: [
+      process.env.CLIENT_URL,
+      "http://localhost:5173",
+      "http://localhost:5174",
+    ],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 // 创建 http 服务器
 const server = http.createServer(app);
 
