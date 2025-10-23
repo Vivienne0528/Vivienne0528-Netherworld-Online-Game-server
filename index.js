@@ -16,7 +16,7 @@ app.use(
     ],
     methods: ["GET", "POST"],
     credentials: true,
-  })
+  }),
 );
 // 创建 http 服务器
 const server = http.createServer(app);
